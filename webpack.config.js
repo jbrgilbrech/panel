@@ -13,10 +13,13 @@ module.exports = {
     performance: {
         hints: false,
     },
-    entry: ['react-hot-loader/patch', './resources/scripts/index.tsx'],
+    entry: {
+        main: ['react-hot-loader/patch', './resources/scripts/index.tsx'],
+        admin: './resources/admin/index.tsx',
+    },
     output: {
         path: path.join(__dirname, '/public/assets'),
-        filename: isProduction ? 'bundle.[chunkhash:8].js' : 'bundle.[fullhash:8].js',
+        filename: isProduction ? '[name].[chunkhash:8].js' : '[name].[fullhash:8].js',
         chunkFilename: isProduction ? '[name].[chunkhash:8].js' : '[name].[fullhash:8].js',
         publicPath: process.env.WEBPACK_PUBLIC_PATH || '/assets/',
         crossOriginLoading: 'anonymous',

@@ -39,7 +39,8 @@
     ]
   },
   "include": [
-    "./resources/scripts/**/*"
+    "./resources/scripts/**/*",
+    "./resources/admin/**/*"
   ],
   "exclude": [
     "/node_modules/"
